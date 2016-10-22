@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+<html>
     <head>
-        <script src="../js/jquery-2.2.3.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="./js/jquery-2.2.3.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="./css/main.css" rel="stylesheet"/>
+        <script src=" c./js/logic.js"></script>
     </head>
     
     
@@ -10,11 +13,29 @@
         <div class="container">
         <div class="row">
             <div class="col-xs-12">
+                <img class="img-responsive" style="width:500px; height:200px;"src="https://www.wired.com/wp-content/uploads/2015/09/google-logo.jpg"></img>
                 <h1>Vision API Concept</h1>
+            </div>    
+
+             <div class="col-xs-12 col-sm-6">   
+                <h2>Upload Image</h2>
+                <input id="image_input" type="file" accept="text/plain">
+                
+            </div>
+             
+            <div class="col-xs-12 col-sm-6">
                 
                 
+                <h2>Your Image</h2>
+                <img></img>
+                <canvas></canvas>
                 
                 
+            </div>
+        
+            <div class="col-xs-12">
+                
+                <button>Submit</button>
             </div>    
         
         </div>
@@ -22,3 +43,7 @@
         </div>
         <!--container-->
     </body>
+    
+    
+    
+</html>
