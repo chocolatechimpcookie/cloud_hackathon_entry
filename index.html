@@ -4,6 +4,7 @@
         <script src="./js/jquery-2.2.3.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+		<script src="https://code.responsivevoice.org/responsivevoice.js" ></script>
         <link href="./css/main.css" rel="stylesheet"/>
         <script src="./js/logic.js"></script>
     </head>
@@ -17,10 +18,12 @@
                 <h1>Vision API Concept</h1>
             </div>    
 
-             <div class="col-xs-12 col-sm-6">   
+             <div class="col-xs-12 col-sm-6 image_box">   
                 <h2>Upload Image or Take Picture</h2>
                 <input id="image_input" type="file" accept="image">
-				<button style="margin-top:10px;" class="btn btn-default btn-success"><span class="glyphicon glyphicon-camera"></span> Camera</button>
+				<!--<input type="file" accept="image/*" capture="camera">-->
+				<!--<button style="margin-top:10px;" class="btn btn-default btn-success"><span class="glyphicon glyphicon-camera"></span> Camera</button>-->
+				<img style="height:300px" class="visible-sm visible-md visible-lg">
                 
             </div>
             
@@ -29,14 +32,32 @@
                 <h2>Your Image</h2>
                 <img class="img-responsive" id="current_image"></img>
                 <canvas style="display:none;" id="canvas"></canvas>
-                
-                
             </div>
         
             <div class="col-xs-12">
-                <button class="btn btn-default btn-primary">Submit</button>
-				<button class="btn btn-default btn-warning">Cancel</button>
-            </div>    
+                <button class="btn btn-default btn-primary" style="margin-bottom:10px; margin-top:10px;">Submit</button>
+				<!--<button class="btn btn-default btn-warning">Cancel</button>-->
+            </div>
+			
+			<div class="col-xs-12">
+				<p>
+					<textarea id="text" cols="45" rows="3">Hello World!</textarea>
+					<select id="voiceselection"></select>
+					<input 
+					 onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+					 type="button" 
+					 value="Play" 
+					/>
+					<script>
+					//Populate voice selection dropdown
+					var voicelist = responsiveVoice.getVoices();
+					var vselect = $("#voiceselection");
+					$.each(voicelist, function() {
+							vselect.append($("<option />").val(this.name).text(this.name));
+					});
+				 </script>
+				</p>
+			</div>	
         
         </div>
         <!--rrow        -->

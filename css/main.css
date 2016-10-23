@@ -14,10 +14,16 @@
 {
     .image_box
 	{
-		height: 500px;	
+		/*min-height: 2000px !important;	*/
+		padding-bottom:100px;
 	}
 }
 
+
+#current_image
+{
+	max-height: 500px;	
+}
 
 //medium and up
 @media only screen and (min-width: 992px)
